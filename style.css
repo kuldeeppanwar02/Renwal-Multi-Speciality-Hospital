@@ -2803,6 +2803,16 @@ ul {
     min-width: unset !important;
     scroll-snap-align: center;
   }
+
+  /* CRITICAL FIX: Cards inside horizontal swipe containers are hidden
+     off-screen horizontally so the IntersectionObserver (vertical scroll trigger)
+     never fires for them. Force all cards inside swipeable rows to be visible. */
+  .dept-clean-grid .dept-clean-card,
+  .doctors-grid .doctor-card,
+  .facilities-grid .facility-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 640px) {
