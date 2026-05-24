@@ -2872,15 +2872,25 @@ ul {
 
   .footer-bottom { flex-direction: column; text-align: center; }
 
-  /* Compact footer spacing on mobile */
+  /* Compact footer — 2-column layout to use right side space */
   .footer {
     padding: 40px 0 0;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 24px !important;
     padding-bottom: 24px !important;
+  }
+
+  /* First column (Logo + About + Social) spans full width */
+  .footer-grid > *:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Last column (Contact Info) spans full width */
+  .footer-grid > *:last-child {
+    grid-column: 1 / -1;
   }
 
   .footer-about { margin-bottom: 16px; }
