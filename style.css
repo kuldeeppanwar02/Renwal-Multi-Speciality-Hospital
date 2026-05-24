@@ -2726,7 +2726,7 @@ ul {
     --emerbar-h: 38px;
   }
 
-  .section { padding: 72px 0; }
+  .section { padding: 64px 0; }
 
   .nav-links { display: none; }
   .nav-links.open {
@@ -2756,13 +2756,8 @@ ul {
   .hero-btns { justify-content: center; }
   .hero-stats { margin: 0 auto; justify-content: center; }
 
-  .dept-grid { grid-template-columns: repeat(2, 1fr); }
-  .doctors-grid { grid-template-columns: repeat(2, 1fr); }
-
   .why-inner { grid-template-columns: 1fr; gap: 48px; }
   .why-stats { grid-template-columns: repeat(4, 1fr); }
-
-  .facilities-grid { grid-template-columns: repeat(3, 1fr); }
 
   .contact-grid { grid-template-columns: 1fr; }
   .map-wrap { min-height: 320px; }
@@ -2776,20 +2771,46 @@ ul {
   .hero-stat { padding: 8px 16px; }
 }
 
+@media (max-width: 768px) {
+  /* SWIPEABLE HORIZONTAL LISTS FOR MOBILE TO SAVE SPACE */
+  .dept-clean-grid, .doctors-grid, .facilities-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 16px !important;
+    padding-bottom: 24px !important; /* Space for shadow/scroll */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .dept-clean-grid::-webkit-scrollbar,
+  .doctors-grid::-webkit-scrollbar,
+  .facilities-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .dept-clean-card, .doctor-card, .facility-card {
+    flex: 0 0 85% !important; /* Card takes 85% of screen, showing a peek of the next one */
+    min-width: unset !important;
+    scroll-snap-align: center;
+  }
+}
+
 @media (max-width: 640px) {
   :root { --emerbar-h: 0px; }
 
   .emergency-bar { display: none; }
 
-  .section { padding: 56px 0; }
-  .section-header { margin-bottom: 40px; }
+  .section { padding: 48px 0; }
+  .section-header { margin-bottom: 32px; }
+  .section-title { font-size: 2rem; }
+  .hero-title { font-size: 2.8rem; }
+  .dept-clean-title { font-size: 2rem; }
 
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { width: 100%; justify-content: center; }
 
-  .dept-grid { grid-template-columns: 1fr; }
-  .doctors-grid { grid-template-columns: 1fr; }
-  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-cards { grid-template-columns: 1fr; }
 
   .why-stats { grid-template-columns: repeat(2, 1fr); }
@@ -2800,4 +2821,14 @@ ul {
 
   .fab-emergency span { display: none; }
   .fab-emergency { padding: 14px; border-radius: 50%; }
+
+  .google-rating-box {
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    text-align: center;
+  }
+  .rating-details {
+    align-items: center;
+  }
 }
