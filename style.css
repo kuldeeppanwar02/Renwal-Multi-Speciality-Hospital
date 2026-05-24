@@ -2753,6 +2753,14 @@ ul {
   .hero-split-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .hero-text-col { padding-right: 0; padding-top: 40px; }
   .hero-visual-col { height: 400px; justify-content: center; }
+  
+  /* Scale down the bubbles for tablet/mobile */
+  .bubble-1 { width: 100px; height: 100px; top: 0%; right: 5%; }
+  .bubble-2 { width: 120px; height: 120px; top: 15%; left: 0%; }
+  .bubble-3 { width: 150px; height: 150px; top: 25%; right: 5%; }
+  .bubble-4 { width: 90px; height: 90px; top: 0%; left: 25%; }
+  .bubble-5 { width: 110px; height: 110px; bottom: 10%; left: 25%; }
+
   .hero-btns { justify-content: center; }
   .hero-stats { margin: 0 auto; justify-content: center; }
 
@@ -2808,8 +2816,34 @@ ul {
   .hero-title { font-size: 2.8rem; }
   .dept-clean-title { font-size: 2rem; }
 
-  .hero-btns { flex-direction: column; }
+  .hero-btns { flex-direction: column; gap: 16px; }
   .hero-btns .btn { width: 100%; justify-content: center; }
+
+  .hero-visual-col { height: 320px; }
+  .bubble-1 { width: 80px; height: 80px; top: 5%; right: 5%; }
+  .bubble-2 { width: 100px; height: 100px; top: 20%; left: 0%; }
+  .bubble-3 { width: 130px; height: 130px; top: 35%; right: 10%; }
+  .bubble-4 { width: 75px; height: 75px; top: 10%; left: 25%; }
+  .bubble-5 { width: 90px; height: 90px; bottom: 5%; left: 30%; }
+
+  /* Fix overlapping stats */
+  .hero-stats { 
+    display: grid !important; 
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    width: 100%;
+    margin-top: 24px;
+    background: transparent !important;
+  }
+  .stat-divider { display: none; }
+  .hero-stat { 
+    flex-direction: column; 
+    text-align: center; 
+    padding: 16px; 
+    background: rgba(255,255,255,0.08); 
+    border-radius: var(--radius-lg); 
+    border: 1px solid rgba(255,255,255,0.1);
+  }
 
   .contact-cards { grid-template-columns: 1fr; }
 
