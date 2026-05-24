@@ -2785,9 +2785,14 @@ ul {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
+    /* CRITICAL: justify-content:center + overflow-x:auto clips left cards.
+       flex-start ensures scroll always starts from card 1 */
+    justify-content: flex-start !important;
     scroll-snap-type: x mandatory;
     gap: 16px !important;
-    padding-bottom: 24px !important; /* Space for shadow/scroll */
+    padding-bottom: 24px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
   }
