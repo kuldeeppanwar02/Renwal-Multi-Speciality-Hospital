@@ -247,7 +247,7 @@
           </p>
         </div>
         <div class="dept-header-right">
-          <a href="https://clinic-os-inky.vercel.app/book" target="_blank" class="btn btn-primary">
+          <a href="javascript:void(0)" onclick="openDoctorModal()" class="btn btn-primary">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
             Book OPD Online
           </a>
@@ -1020,6 +1020,56 @@
         <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
       <img src="" alt="Full Poster" id="lightbox-img" class="lightbox-img" />
+    </div>
+  </div>
+
+  <!-- ===== DOCTOR SELECTION MODAL ===== -->
+  <div class="modal-overlay" id="doctor-selection-modal">
+    <div class="modal-content doctor-select-content">
+      <button class="modal-close" id="doctor-select-close" aria-label="Close modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-header-centered">
+        <h2>Select Your Doctor</h2>
+        <p>Choose a department to book your OPD appointment</p>
+      </div>
+      <div class="doctor-select-grid">
+        <a href="https://clinic-os-inky.vercel.app/book?clinic=ortho" target="_blank" class="doc-select-card" onclick="closeDoctorModal()">
+          <img src="dr_r_p_samota.webp" alt="Dr. R P Samota" />
+          <div class="doc-select-info">
+            <h4>Dr. R P Samota</h4>
+            <span>Orthopaedics & Trauma</span>
+          </div>
+        </a>
+        <a href="https://clinic-os-inky.vercel.app/book?clinic=surgery" target="_blank" class="doc-select-card" onclick="closeDoctorModal()">
+          <img src="dr_ml_didel.webp" alt="Dr. M L Didel" />
+          <div class="doc-select-info">
+            <h4>Dr. M L Didel</h4>
+            <span>General Surgery</span>
+          </div>
+        </a>
+        <a href="https://clinic-os-inky.vercel.app/book?clinic=medicine" target="_blank" class="doc-select-card" onclick="closeDoctorModal()">
+          <img src="dr_rajesh.webp" alt="Dr. Rajesh Bochaliya" />
+          <div class="doc-select-info">
+            <h4>Dr. Rajesh Bochaliya</h4>
+            <span>Medicine & ICU</span>
+          </div>
+        </a>
+        <a href="https://clinic-os-inky.vercel.app/book?clinic=urology" target="_blank" class="doc-select-card" onclick="closeDoctorModal()">
+          <img src="dr_nishkarsh.webp" alt="Dr. Nishkarsh Mehta" />
+          <div class="doc-select-info">
+            <h4>Dr. Nishkarsh Mehta</h4>
+            <span>Urology</span>
+          </div>
+        </a>
+        <a href="https://clinic-os-inky.vercel.app/book?clinic=anaesthesia" target="_blank" class="doc-select-card" onclick="closeDoctorModal()">
+          <img src="dr_pankaj.webp" alt="Dr. Pankaj Saini" />
+          <div class="doc-select-info">
+            <h4>Dr. Pankaj Saini</h4>
+            <span>Anaesthesia & Pain</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
