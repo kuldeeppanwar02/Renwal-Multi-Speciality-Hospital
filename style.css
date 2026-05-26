@@ -5,40 +5,40 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  --navy: #0d253d; /* Stripe Deep Navy */
-  --navy-dark: #071421;
-  --navy-mid: #1c385c;
-  --navy-light: #2a4c78;
+  --navy: #1d1d1f; /* Apple Near Black */
+  --navy-dark: #000000;
+  --navy-mid: #333336;
+  --navy-light: #515154;
   --accent: #0066cc; /* Apple Action Blue */
-  --accent-dark: #0055aa;
+  --accent-dark: #004499;
   --accent-glow: rgba(0, 102, 204, 0.15);
   --teal: #14b8a6;
   --gold: #f59e0b;
   --orange-main: #f97316;
-  --red-emg: #ef4444;
-  --red-emg-dark: #dc2626;
-  --green: #22c55e;
+  --red-emg: #ff3b30; /* Apple Red */
+  --red-emg-dark: #c93429;
+  --green: #34c759; /* Apple Green */
   --wa-green: #25D366;
 
   --white: #ffffff;
   --off-white: #f5f5f7; /* Apple / Airbnb Soft background */
-  --light-bg: #f7f7f7;
+  --light-bg: #f5f5f7;
   --text-primary: #1d1d1f; /* Apple Near Black */
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --border: #e2e8f0;
-  --border-light: rgba(255,255,255,0.1);
+  --text-secondary: #86868b; /* Apple Gray Text */
+  --text-muted: #98989d;
+  --border: #d2d2d7; /* Apple Border */
+  --border-light: rgba(0,0,0,0.05);
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.15), 0 10px 10px -5px rgba(0,0,0,0.04);
-  --shadow-blue: 0 8px 30px rgba(14, 165, 233, 0.25);
-  --shadow-card: 0 4px 24px rgba(11, 31, 58, 0.08);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.03);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.05);
+  --shadow-blue: 0 8px 30px rgba(0, 102, 204, 0.2);
+  --shadow-card: 0 6px 20px rgba(0,0,0,0.06);
 
   --radius-sm: 8px;
-  --radius-md: 14px; /* Airbnb Soft cards */
-  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-lg: 18px; /* Apple / Airbnb large rounding */
   --radius-xl: 24px;
   --radius-full: 9999px;
 
@@ -2799,6 +2799,14 @@ ul {
     padding-right: 16px !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
+  }
+
+  /* Fix for missing right padding on horizontal scroll */
+  .dept-clean-grid::after, 
+  .doctors-grid::after, 
+  .facilities-grid::after {
+    content: '';
+    flex: 0 0 16px;
   }
 
   .dept-clean-grid::-webkit-scrollbar,
