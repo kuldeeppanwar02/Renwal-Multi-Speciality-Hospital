@@ -218,14 +218,14 @@ document.addEventListener('DOMContentLoaded', () => {
     pankaj: {
       img: 'doctor/dr_pankaj.webp',
       name: 'Dr. Pankaj Saini',
-      qual: 'DNB Orthopedics · 5+ Years Experience',
-      title: 'Orthopaedic Surgeon',
-      dept: 'Orthopaedics',
-      deptColor: '#7c3aed',
+      qual: 'DNB Anaesthesia — 5+ Years Experience',
+      title: 'Consultant Anaesthetist & Critical Care',
+      dept: 'Anaesthesia & Pain Management',
+      deptColor: '#8b5cf6',
       timing: 'Daily OPD',
-      emergency: false,
-      specs: ['Fracture Fixation', 'Joint Disorders', 'Trauma Surgery', 'Polytrauma'],
-      bio: 'Dr. Pankaj Saini is an orthopaedic surgeon with great experience managing complex fractures, polytrauma, and joint diseases. He provides dedicated daily OPD services to ensure patients receive timely specialist care without delay.'
+      emergency: true,
+      specs: ['General & Regional Anaesthesia', 'Pain Management', 'Critical Care & ICU', 'Trauma Resuscitation'],
+      bio: 'Dr. Pankaj Saini is a highly skilled anaesthesiologist and critical care specialist. He ensures patient safety during complex surgeries and manages the Intensive Care Unit (ICU), providing life-saving interventions for critically ill patients.'
     }
   };
 
