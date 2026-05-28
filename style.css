@@ -1937,7 +1937,7 @@ ul {
   .bento-wide { grid-column: span 1; grid-row: span 1; }
   .bento-standard { grid-column: span 1; grid-row: span 1; }
   .bento-stats-grid { grid-template-columns: 1fr; }
-  .bento-cashless-card { grid-column: span 1; }
+  .bento-cashless-card { display: none !important; }
 }
 
 /* ===== FACILITIES ===== */
