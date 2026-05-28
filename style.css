@@ -882,10 +882,22 @@ ul {
 }
 
 .about-pillars {
+  margin-top: 48px;
+}
+
+.about-pillars-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillars-group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 48px;
+}
+
+.mobile-duplicate {
+  display: none !important;
 }
 
 .pillar {
@@ -2739,7 +2751,49 @@ ul {
 
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-img { height: 320px; }
-  .about-pillars { grid-template-columns: 1fr; }
+  .about-pillars { 
+    height: 140px; 
+    overflow: hidden; 
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    margin-top: 32px;
+  }
+  .about-pillars-track {
+    display: flex;
+    flex-direction: column;
+    animation: scroll-vertical 10s linear infinite;
+  }
+  .about-pillars-track:hover, .about-pillars-track:active {
+    animation-play-state: paused;
+  }
+  .pillars-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px; /* equal to gap */
+  }
+  .mobile-duplicate {
+    display: flex !important;
+  }
+  .pillar {
+    margin: 0;
+    padding: 14px 16px;
+    height: 64px; /* fixed height for predictable scroll */
+    justify-content: center;
+    box-shadow: none;
+    border-color: rgba(0,0,0,0.08);
+  }
+  .pillar-icon {
+    width: 36px; height: 36px;
+  }
+  .pillar-text strong {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .pillar-text p {
+    font-size: 0.75rem;
+  }
 
   .hero-split-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .hero-text-col { padding-right: 0; padding-top: 40px; }
@@ -3456,4 +3510,10 @@ ul {
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
+}
+
+
+@keyframes scroll-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
