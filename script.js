@@ -474,33 +474,25 @@ function setupAutoScrollers() {
     
     // Duplicate content once more if it's very small, but html already has 2 sets
     
-    // For right-scrolling tracks, start at the middle to allow scrolling left
-    if (isScrollingRight) {
-      setTimeout(() => {
-        const items = track.children;
-        if (items.length > 1) {
-           marquee.scrollLeft = items[Math.floor(items.length / 2)].offsetLeft - track.offsetLeft;
-        }
-      }, 100);
-    }
+    // Remove the initial timeout jump. We handle it in the step loop seamlessly.
 
     function step() {
       if (!isHoveredOrTouched) {
         const items = track.children;
         const resetPoint = items.length > 1 ? (items[Math.floor(items.length / 2)].offsetLeft - track.offsetLeft) : (track.scrollWidth / 2);
 
+        // Move the scroll
         if (isScrollingRight) {
           marquee.scrollLeft -= scrollAmount;
-          // If we reach the start, jump back to middle
-          if (marquee.scrollLeft <= 0) {
-            marquee.scrollLeft = resetPoint;
-          }
         } else {
           marquee.scrollLeft += scrollAmount;
-          // If we scrolled past half, reset to 0
-          if (marquee.scrollLeft >= resetPoint) {
-            marquee.scrollLeft = 0;
-          }
+        }
+
+        // Seamless infinite loop bounds check (handles both manual swipe and auto scroll)
+        if (marquee.scrollLeft >= resetPoint) {
+          marquee.scrollLeft -= resetPoint;
+        } else if (marquee.scrollLeft <= 0) {
+          marquee.scrollLeft += resetPoint;
         }
       }
       requestAnimationFrame(step);
