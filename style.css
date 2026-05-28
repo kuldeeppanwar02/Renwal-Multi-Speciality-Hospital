@@ -3242,3 +3242,125 @@ ul {
   .contact-cards-desktop { display: none !important; }
   .hide-on-mobile { display: none !important; }
 }
+
+
+/* --- QUICK BAR MOBILE --- */
+.quick-mobile {
+  display: none; /* hidden on desktop */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .quick-desktop {
+    display: none !important;
+  }
+  .quick-mobile {
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--white);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .qm-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--navy);
+  }
+  .qm-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(43, 107, 243, 0.1);
+    color: var(--accent);
+  }
+  .qm-wa .qm-icon {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+  }
+  .qm-loc .qm-icon {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+  }
+  .qm-btn span {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+/* --- BOTTOM SHEET MODAL --- */
+.qm-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none; /* hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: flex-end;
+}
+.qm-modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+.qm-modal-content {
+  background: var(--white);
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  padding: 24px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.qm-modal-overlay.active .qm-modal-content {
+  transform: translateY(0);
+}
+.qm-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.qm-modal-header h4 {
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+#qm-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+.qm-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.qm-modal-item:last-child {
+  margin-bottom: 0;
+}
+.qmi-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+}
+.qmi-title {
+  font-size: 0.85rem; font-weight: 600; color: var(--text-light); text-transform: uppercase;
+}
+.qmi-sub {
+  font-size: 1.15rem; font-weight: 700; color: var(--navy);
+}

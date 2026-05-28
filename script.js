@@ -538,3 +538,28 @@ if (document.readyState === 'loading') {
 } else {
   setupAutoScrollers();
 }
+
+
+// --- QUICK BAR MOBILE MODAL LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+  const qmCallBtn = document.getElementById('qm-call-btn');
+  const qmModal = document.getElementById('qm-call-modal');
+  const qmCloseBtn = document.getElementById('qm-close-btn');
+
+  if (qmCallBtn && qmModal && qmCloseBtn) {
+    qmCallBtn.addEventListener('click', () => {
+      qmModal.classList.add('active');
+    });
+
+    qmCloseBtn.addEventListener('click', () => {
+      qmModal.classList.remove('active');
+    });
+
+    // Close on overlay click
+    qmModal.addEventListener('click', (e) => {
+      if (e.target === qmModal) {
+        qmModal.classList.remove('active');
+      }
+    });
+  }
+});
