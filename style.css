@@ -1936,7 +1936,9 @@ ul {
   .bento-large { grid-column: span 1; grid-row: span 1; }
   .bento-wide { grid-column: span 1; grid-row: span 1; }
   .bento-standard { grid-column: span 1; grid-row: span 1; }
-  .bento-stats-grid { grid-template-columns: 1fr; }
+  .bento-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .bento-stat-card { padding: 24px 12px; }
+  .stat-num { font-size: 2.5rem; }
   .bento-cashless-card { display: none !important; }
 }
 
