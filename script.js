@@ -476,21 +476,29 @@ function setupAutoScrollers() {
     
     // For right-scrolling tracks, start at the middle to allow scrolling left
     if (isScrollingRight) {
-      marquee.scrollLeft = track.scrollWidth / 2;
+      setTimeout(() => {
+        const items = track.children;
+        if (items.length > 1) {
+           marquee.scrollLeft = items[Math.floor(items.length / 2)].offsetLeft - track.offsetLeft;
+        }
+      }, 100);
     }
 
     function step() {
       if (!isHoveredOrTouched) {
+        const items = track.children;
+        const resetPoint = items.length > 1 ? (items[Math.floor(items.length / 2)].offsetLeft - track.offsetLeft) : (track.scrollWidth / 2);
+
         if (isScrollingRight) {
           marquee.scrollLeft -= scrollAmount;
           // If we reach the start, jump back to middle
           if (marquee.scrollLeft <= 0) {
-            marquee.scrollLeft = track.scrollWidth / 2;
+            marquee.scrollLeft = resetPoint;
           }
         } else {
           marquee.scrollLeft += scrollAmount;
           // If we scrolled past half, reset to 0
-          if (marquee.scrollLeft >= track.scrollWidth / 2) {
+          if (marquee.scrollLeft >= resetPoint) {
             marquee.scrollLeft = 0;
           }
         }
