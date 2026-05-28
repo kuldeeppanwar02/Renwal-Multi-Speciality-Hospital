@@ -1979,27 +1979,17 @@ ul {
   width: max-content;
 }
 
-/* Animations */
-@keyframes scrollRight {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
-}
+/* Native JS Auto-Scroller handles marquee animation */
 
-@keyframes scrollLeft {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Apply animations with pause on hover */
+/* Remove CSS animation on tracks */
 .track-right {
-  animation: scrollRight 40s linear infinite;
+  /* Handled by JS */
 }
 .track-left {
-  animation: scrollLeft 40s linear infinite;
+  /* Handled by JS */
 }
-
-.marquee-track:hover {
-  animation-play-state: paused;
+.track-reviews {
+  /* Handled by JS */
 }
 
 /* Card Styling for Marquee */
