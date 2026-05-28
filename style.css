@@ -3364,3 +3364,4 @@ ul {
 .qmi-sub {
   font-size: 1.15rem; font-weight: 700; color: var(--navy);
 }
+@media (max-width: 768px) { .hero-scroll-indicator { display: none !important; } }
