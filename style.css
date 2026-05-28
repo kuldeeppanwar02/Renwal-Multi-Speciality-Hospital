@@ -3517,3 +3517,61 @@ ul {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
 }
+
+/* ===== MOBILE FLOATING CTA BAR ===== */
+.mobile-floating-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Add padding to body so the floating bar doesn't overlap footer content */
+  body {
+    padding-bottom: 80px;
+  }
+  
+  .mobile-floating-cta {
+    display: flex;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    padding: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    gap: 8px;
+  }
+  
+  .cta-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 48px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+  
+  .whatsapp-cta {
+    background: #10b981;
+    color: white;
+  }
+  
+  .book-cta {
+    background: var(--accent);
+    color: white;
+  }
+}
