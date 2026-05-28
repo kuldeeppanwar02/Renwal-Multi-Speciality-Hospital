@@ -3391,9 +3391,11 @@ ul {
 
 .marquee-wrapper {
   display: flex;
+  flex-wrap: nowrap;
   width: 100%;
   overflow: hidden;
   position: relative;
+  white-space: nowrap;
   /* Gradient mask for fading edges */
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -3404,12 +3406,14 @@ ul {
 }
 
 .marquee-track {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 60px;
   padding: 0 30px;
   animation: scroll-left 25s linear infinite;
   min-width: max-content;
+  white-space: nowrap;
 }
 
 .marquee-logo {
