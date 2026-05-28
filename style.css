@@ -1960,7 +1960,16 @@ ul {
 
 .marquee-row {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.marquee-row::-webkit-scrollbar {
+  display: none;
 }
 
 /* Base track styles */
@@ -2582,17 +2591,7 @@ ul {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scroll-reviews 60s linear infinite;
   padding-left: 24px;
-}
-
-.track-reviews:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-reviews {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 12px)); /* -50% to scroll exactly half the content (the original 15), -12px for half the gap */ }
 }
 
 .review-card {
