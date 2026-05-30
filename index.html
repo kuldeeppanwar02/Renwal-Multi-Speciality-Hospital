@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -438,9 +439,10 @@
         <h2 class="section-title">Meet Our Specialists</h2>
         <p class="section-desc">Tap on a doctor to view their full profile, specializations &amp; OPD timing</p>
       </div>
-      <div class="doctors-grid reveal">
+      <div class="swiper doctors-swiper reveal">
+        <div class="swiper-wrapper">
 
-        <div class="doctor-card" data-delay="0" data-doctor="nishkarsh" role="button" tabindex="0" aria-label="View Dr. Nishkarsh Mehta profile">
+        <div class="swiper-slide doctor-card" data-delay="0" data-doctor="nishkarsh" role="button" tabindex="0" aria-label="View Dr. Nishkarsh Mehta profile">
           <div class="doctor-img-wrap">
             <img src="doctor/dr_nishkarsh.webp" alt="Dr. Nishkarsh Mehta" class="doctor-img" />
             <div class="doctor-dept-badge">Urology</div>
@@ -457,7 +459,7 @@
           <div class="doctor-view-btn">View Profile →</div>
         </div>
 
-        <div class="doctor-card" data-delay="1" data-doctor="rajesh" role="button" tabindex="0" aria-label="View Dr. Rajesh Bochaliya profile">
+        <div class="swiper-slide doctor-card" data-delay="1" data-doctor="rajesh" role="button" tabindex="0" aria-label="View Dr. Rajesh Bochaliya profile">
           <div class="doctor-img-wrap">
             <img src="doctor/dr_rajesh.webp" alt="Dr. Rajesh Bochaliya" class="doctor-img" />
             <div class="doctor-dept-badge" style="--bg: #16a34a;">General Medicine</div>
@@ -474,7 +476,7 @@
           <div class="doctor-view-btn">View Profile →</div>
         </div>
 
-        <div class="doctor-card" data-delay="2" data-doctor="samota" role="button" tabindex="0" aria-label="View Dr. R P Samota profile">
+        <div class="swiper-slide doctor-card" data-delay="2" data-doctor="samota" role="button" tabindex="0" aria-label="View Dr. R P Samota profile">
           <div class="doctor-img-wrap">
             <img src="doctor/dr_r_p_samota.webp" alt="Dr. R P Samota" class="doctor-img" />
             <div class="doctor-dept-badge" style="--bg: #d97706;">Orthopaedics</div>
@@ -491,7 +493,7 @@
           <div class="doctor-view-btn">View Profile →</div>
         </div>
 
-        <div class="doctor-card" data-delay="3" data-doctor="didel" role="button" tabindex="0" aria-label="View Dr. M L Didel profile">
+        <div class="swiper-slide doctor-card" data-delay="3" data-doctor="didel" role="button" tabindex="0" aria-label="View Dr. M L Didel profile">
           <div class="doctor-img-wrap">
             <img src="doctor/dr_ml_didel.webp" alt="Dr. M L Didel" class="doctor-img" />
             <div class="doctor-dept-badge" style="--bg: #e11d48;">Surgery</div>
@@ -508,7 +510,7 @@
           <div class="doctor-view-btn">View Profile →</div>
         </div>
 
-        <div class="doctor-card" data-delay="4" data-doctor="pankaj" role="button" tabindex="0" aria-label="View Dr. Pankaj Saini profile">
+        <div class="swiper-slide doctor-card" data-delay="4" data-doctor="pankaj" role="button" tabindex="0" aria-label="View Dr. Pankaj Saini profile">
           <div class="doctor-img-wrap">
             <img src="doctor/dr_pankaj.webp" alt="Dr. Pankaj Saini" class="doctor-img" />
             <div class="doctor-dept-badge" style="--bg: #8b5cf6;">Anaesthesia</div>
@@ -525,13 +527,13 @@
           <div class="doctor-view-btn">View Profile →</div>
         </div>
             </div>
-      <!-- Carousel Indicators for Mobile -->
-      <div class="carousel-indicators" id="doctor-indicators">
-        <div class="indicator active"></div>
+      
         <div class="indicator"></div>
         <div class="indicator"></div>
         <div class="indicator"></div>
         <div class="indicator"></div>
+              </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -1247,6 +1249,7 @@
     </button>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

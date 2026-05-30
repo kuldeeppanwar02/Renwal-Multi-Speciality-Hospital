@@ -588,3 +588,35 @@ document.addEventListener("DOMContentLoaded", () => {
     doctorCards.forEach(card => observer.observe(card));
   }
 });
+
+// Swiper Initialization for Doctors on Mobile
+let doctorsSwiper = null;
+function initDoctorsSwiper() {
+  if (window.innerWidth <= 900 && !doctorsSwiper) {
+    const swiperEl = document.querySelector('.doctors-swiper');
+    if(swiperEl) {
+      doctorsSwiper = new Swiper('.doctors-swiper', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        initialSlide: 2,
+        effect: 'coverflow',
+        coverflowEffect: {
+          rotate: 15,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    }
+  } else if (window.innerWidth > 900 && doctorsSwiper) {
+    doctorsSwiper.destroy(true, true);
+    doctorsSwiper = null;
+  }
+}
+window.addEventListener('resize', initDoctorsSwiper);
+document.addEventListener('DOMContentLoaded', initDoctorsSwiper);

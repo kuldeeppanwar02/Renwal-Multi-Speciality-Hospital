@@ -1184,11 +1184,7 @@ ul {
   color: rgba(255,255,255,0.6);
 }
 
-.doctors-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
+
 
 .doctor-card {
   background: rgba(255,255,255,0.04);
@@ -2830,7 +2826,7 @@ ul {
 
 @media (max-width: 768px) {
   /* SWIPEABLE HORIZONTAL LISTS FOR MOBILE TO SAVE SPACE */
-  .dept-clean-grid, .doctors-grid, .facilities-grid {
+  .dept-clean-grid, .facilities-grid {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -2840,27 +2836,22 @@ ul {
     scroll-snap-type: x mandatory;
     gap: 16px !important;
     padding-bottom: 24px !important;
-    padding-left: 7.5vw !important; 
-    padding-right: 7.5vw !important;
+    
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
   }
 
   /* Fix for missing right padding on horizontal scroll */
-  .dept-clean-grid::after, 
-  .doctors-grid::after, 
-  .facilities-grid::after {
+  .dept-clean-grid::after, .facilities-grid::after {
     content: '';
     flex: 0 0 7.5vw;
   }
 
-  .dept-clean-grid::-webkit-scrollbar,
-  .doctors-grid::-webkit-scrollbar,
-  .facilities-grid::-webkit-scrollbar {
+  .dept-clean-grid::-webkit-scrollbar, .facilities-grid::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
   }
 
-  .dept-clean-card, .doctor-card, .facility-card {
+  .dept-clean-card, .facility-card {
     flex: 0 0 85% !important; /* Card takes 85% of screen, showing a peek of the next one */
     min-width: unset !important;
     scroll-snap-align: center;
@@ -3576,27 +3567,52 @@ ul {
   }
 }
 
-/* Carousel Indicators */
-.carousel-indicators {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  margin-top: 24px;
+
+
+/* ===== DOCTORS SWIPER ===== */
+.doctors-swiper {
+  width: 100%;
+  padding-bottom: 40px !important; /* Space for pagination */
+  overflow: hidden;
 }
-@media (max-width: 900px) {
-  .carousel-indicators {
-    display: flex;
+.doctors-swiper .swiper-slide {
+  height: auto;
+}
+/* Desktop Grid Fallback */
+@media (min-width: 901px) {
+  .doctors-swiper {
+    padding-bottom: 0 !important;
+    overflow: visible;
+  }
+  .doctors-swiper .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    transform: none !important;
+  }
+  .doctors-swiper .swiper-slide {
+    width: auto !important;
+  }
+  .doctors-swiper .swiper-pagination {
+    display: none;
   }
 }
-.indicator {
-  width: 12px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.indicator.active {
-  width: 24px;
-  background: var(--white);
+/* Mobile Coverflow Tweaks */
+@media (max-width: 900px) {
+  .doctors-swiper .swiper-slide {
+    width: 75%; /* Set specific width for coverflow */
+  }
+  /* Custom Dashes for Swiper Pagination */
+  .doctors-swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  .doctors-swiper .swiper-pagination-bullet-active {
+    width: 24px;
+    background: var(--white);
+  }
 }
