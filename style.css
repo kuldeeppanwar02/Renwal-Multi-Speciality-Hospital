@@ -988,7 +988,7 @@ ul {
 .dept-clean-card {
   flex: 0 1 calc(33.333% - 19px); /* 3 cards per row */
   min-width: 320px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--bg-tint, rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-xl);
@@ -3615,4 +3615,29 @@ ul {
     width: 24px;
     background: var(--white);
   }
+}
+
+/* ===== NATIVE CAROUSEL INDICATORS ===== */
+.native-carousel-indicators {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .native-carousel-indicators {
+    display: flex;
+  }
+}
+.native-carousel-indicators .indicator {
+  width: 12px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.native-carousel-indicators .indicator.active {
+  width: 24px;
+  background: var(--accent);
 }

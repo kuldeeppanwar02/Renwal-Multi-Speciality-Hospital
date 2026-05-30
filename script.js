@@ -620,3 +620,28 @@ function initDoctorsSwiper() {
 }
 window.addEventListener('resize', initDoctorsSwiper);
 document.addEventListener('DOMContentLoaded', initDoctorsSwiper);
+
+// Native Carousel Pagination Logic (Departments)
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.dept-clean-card');
+  const indicators = document.querySelectorAll('#dept-indicators .indicator');
+  
+  if (cards.length > 0 && indicators.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(cards).indexOf(entry.target);
+          if (index !== -1 && indicators[index]) {
+            indicators.forEach(ind => ind.classList.remove('active'));
+            indicators[index].classList.add('active');
+          }
+        }
+      });
+    }, {
+      root: document.querySelector('.dept-clean-grid'),
+      threshold: 0.5
+    });
+
+    cards.forEach(card => observer.observe(card));
+  }
+});
