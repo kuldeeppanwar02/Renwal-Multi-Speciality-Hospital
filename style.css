@@ -2840,8 +2840,8 @@ ul {
     scroll-snap-type: x mandatory;
     gap: 16px !important;
     padding-bottom: 24px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 7.5vw !important; 
+    padding-right: 7.5vw !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
   }
@@ -2851,7 +2851,7 @@ ul {
   .doctors-grid::after, 
   .facilities-grid::after {
     content: '';
-    flex: 0 0 16px;
+    flex: 0 0 7.5vw;
   }
 
   .dept-clean-grid::-webkit-scrollbar,
@@ -3574,4 +3574,29 @@ ul {
     background: var(--accent);
     color: white;
   }
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+@media (max-width: 900px) {
+  .carousel-indicators {
+    display: flex;
+  }
+}
+.indicator {
+  width: 12px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.indicator.active {
+  width: 24px;
+  background: var(--white);
 }

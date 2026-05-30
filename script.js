@@ -563,3 +563,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Doctor Carousel Pagination
+document.addEventListener("DOMContentLoaded", () => {
+  const doctorCards = document.querySelectorAll('.doctor-card');
+  const indicators = document.querySelectorAll('#doctor-indicators .indicator');
+  
+  if (doctorCards.length > 0 && indicators.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(doctorCards).indexOf(entry.target);
+          if (index !== -1 && indicators[index]) {
+            indicators.forEach(ind => ind.classList.remove('active'));
+            indicators[index].classList.add('active');
+          }
+        }
+      });
+    }, {
+      root: document.querySelector('.doctors-grid'),
+      threshold: 0.5
+    });
+
+    doctorCards.forEach(card => observer.observe(card));
+  }
+});
