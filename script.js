@@ -645,3 +645,26 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => observer.observe(card));
   }
 });
+
+
+// Update copyright year automatically
+const yearSpan = document.getElementById("current-year");
+if(yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+const devTrigger = document.querySelector("[data-dev-trigger]");
+const devModal = document.querySelector("[data-dev-modal]");
+const devOverlay = document.querySelector("[data-dev-overlay]");
+const devCloseBtn = document.querySelector("[data-dev-close]");
+
+const toggleDevModal = (show) => {
+  if (!devModal || !devOverlay) return;
+  if (show) {
+    devModal.classList.add("open");
+    devOverlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+  } else {
+    devModal.classList.remove("open");
+    devOverlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+};
