@@ -668,3 +668,6 @@ const toggleDevModal = (show) => {
     document.body.style.overflow = "";
   }
 };
+devTrigger?.addEventListener("click", () => toggleDevModal(true));
+devCloseBtn?.addEventListener("click", () => toggleDevModal(false));
+devOverlay?.addEventListener("click", () => toggleDevModal(false));

@@ -3666,7 +3666,7 @@ ul {
 .dev-modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 90;
+  z-index: 99998;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   opacity: 0;
@@ -3681,7 +3681,7 @@ ul {
 
 .dev-modal {
   position: fixed;
-  z-index: 100;
+  z-index: 99999;
   bottom: 0;
   left: 0;
   right: 0;
