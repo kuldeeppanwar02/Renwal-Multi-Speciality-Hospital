@@ -13,7 +13,7 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Deployed-Cloudflare_Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![Live](https://img.shields.io/badge/Live-rmhospital.vercel.app-green)](https://rmhospital.vercel.app)
 
-[**🚀 Live → **](https://rmh.kpanwar.workers.dev/)
+[**🚀 Live → rmh.kpanwar.workers.dev **](https://rmh.kpanwar.workers.dev/)
 
 </div>
 
