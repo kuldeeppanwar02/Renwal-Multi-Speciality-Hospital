@@ -11,7 +11,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-Custom_Design_System-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Cloudflare Workers](https://img.shields.io/badge/Deployed-Cloudflare_Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
-[![Live](https://img.shields.io/badge/Live-rmhospital.vercel.app-green)](https://rmh.kpanwar.workers.dev/)
+[![Live](https://img.shields.io/badge/Live-rmh.kpanwar.workers.dev-green)](https://rmh.kpanwar.workers.dev/)
 
 [**🚀 Live → rmh.kpanwar.workers.dev **](https://rmh.kpanwar.workers.dev/)
 
